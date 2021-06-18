@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1> prototype of classifier</h1>
+    {% block content %}
+        <h3>upload conversation</h3>
+        <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit"> Upload kakao conversation</button>
+
+        </form>
+    {% endblock %}
+</body>
+</html>
