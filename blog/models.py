@@ -18,5 +18,5 @@ def up_to(instance, filename):
 
 
 class KakaoUpload(models.Model):
-    user_name = models.TextField(max_length=100)
+    user_name = models.CharField(max_length=100,null=False)
     kakao_conversation = models.FileField(upload_to=up_to)

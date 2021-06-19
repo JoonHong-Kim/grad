@@ -1,12 +1,18 @@
 <!DOCTYPE html>
-#after.html
+
 <table class="table-contents" style="padding:10px">
-  <tr>
-    <th>제목</th>
-    <th>내용</th>
-  </tr>
+
+  <h1>대화에서 "{{ emotion1 }}" 감정, "{{ emotion2 }}" 감정이 가장 많았습니다. </h1>
+
+  <h1>{{ emotion1 }} 상태인 사람에게 추천하는 음악</h1>
   {% for post in posts %}
-    <h1>{{ post.emotion_type }}</h1>
-    <iframe width="425" height="349" src="{{ post.song_url}}" frameborder="0" allowfullscreen=""></iframe>
-{% endfor %}
+    <iframe width="425" height="349"  src="{{ post.song_url}}" frameborder="0" allowfullscreen=""></iframe>
+
+  {% endfor %}
+
+  <h1>{{emotion2}} 상태인 사람에게 추천하는 음악</h1>
+  {% for post1 in posts1 %}
+    <iframe width="425" height="349" src="{{ post1.song_url}}" frameborder="0" allowfullscreen=""></iframe>
+  {% endfor %}
+
 </table>

@@ -52,7 +52,7 @@ class BERTClassifier(nn.Module):
 
 
 class KoBERTPredictor:
-    def __init__(self, model_path="C:/Users\KIMJOONHONG/ml/datasets/best-epoch-36-f1-0.732.bin"):
+    def __init__(self, model_path="blog/model/best-epoch-36-f1-0.732.bin"):
 
         tokenizer = get_tokenizer()
         bertmodel, vocab = get_pytorch_kobert_model()
@@ -156,6 +156,5 @@ class KoBERTPredictor:
             score = softmax(out).cpu().detach().numpy()
             result += score
         #print(emo_dict[np.delete(result, [1, 4]).argmax()])
-        print(np.delete(result, [1, 4]))
-        print(result.argmax())
+
         return [emo_dict[np.delete(result, [1, 4]).argsort()[-1]],emo_dict[np.delete(result, [1, 4]).argsort()[-2]]]
